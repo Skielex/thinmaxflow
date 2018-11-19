@@ -68,5 +68,27 @@ cdef public class GraphFloat[object PyObject_GraphFloat, type GraphFloat]:
         Occasionally there may be several minimum cuts. If a node can be assigned
         to both the source and the sink, then default_segm is returned.
         """
-        
         return self.c_graph.what_segment(i, default_segm)
+
+    def reset(self):
+        """Removes all nodes and edges. 
+        After that functions add_node() and add_edge() must be called again. 
+        
+        Advantage compared to deleting Graph and allocating it again:
+        no calls to delete/new (which could be quite slow).
+        
+        If the graph structure stays the same, then an alternative
+        is to go through all nodes/edges and set new residual capacities
+        (see functions below).
+        """
+        self.c_graph.reset()
+
+    def get_node_num(self):
+        """Gets the number of nodes in the graph.
+        """
+        return self.c_graph.get_node_num()
+
+    def get_arc_num(self):
+        """Gets the number of edges in the graph.
+        """
+        return self.c_graph.get_arc_num()

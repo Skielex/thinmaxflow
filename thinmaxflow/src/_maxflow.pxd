@@ -17,4 +17,7 @@ cdef extern from "core/graph.h":
         void add_tweights(node_id i, tcaptype cap_source, tcaptype cap_sink)
         flowtype maxflow(bool reuse_trees)
         termtype what_segment(node_id i, termtype default_segm)
-
+        void reset()
+        int get_node_num()
+        long long get_arc_num()
+        void mark_node(node_id i)
