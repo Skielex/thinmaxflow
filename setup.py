@@ -43,12 +43,12 @@ def extensions():
     return cythonize([maxflow_module])
 
 
-setup(name="thinpymaxflow",
+setup(name="thinmaxflow",
       version="0.1.0",
       author="Niels Jeppesen",
       author_email="niejep@dtu.dk",
       description="A thin Maxflow wrapper for Python",
-      url="https://github.com/Skielex/thin-pymaxflow",
+      url="https://github.com/Skielex/thinmaxflow",
       license="GPL",
       long_description="""
       
