@@ -90,6 +90,30 @@ cdef public class GraphInt[object PyObject_GraphInt, type GraphInt]:
         """
         return self.c_graph.get_arc_num()
 
+    def mark_node(self, node_id i):
+        """If flag reuse_trees is true while calling maxflow(), then search trees
+        are reused from previous maxflow computation. 
+        In this case before calling maxflow() the user must
+        specify which parts of the graph have changed by calling mark_node():
+        add_tweights(i),set_trcap(i)    => call mark_node(i)
+        add_edge(i,j),set_rcap(a)       => call mark_node(i); mark_node(j)
+        
+        This option makes sense only if a small part of the graph is changed.
+        The initialization procedure goes only through marked nodes then.
+        
+        mark_node(i) can either be called before or after graph modification.
+        Can be called more than once per node, but calls after the first one
+        do not have any effect.
+        
+        NOTE: 
+        - This option cannot be used in the first call to maxflow().
+        - It is not necessary to call mark_node() if the change is ``not essential'',
+            i.e. sign(trcap) is preserved for a node and zero/nonzero status is preserved for an arc.
+        - To check that you marked all necessary nodes, you can call maxflow(false) after calling maxflow(true).
+            If everything is correct, the two calls must return the same value of flow. (Useful for debugging).
+        """
+        return self.c_graph.mark_node(i)
+
 
 cdef public class GraphShort[object PyObject_GraphShort, type GraphShort]:
 
@@ -177,6 +201,30 @@ cdef public class GraphShort[object PyObject_GraphShort, type GraphShort]:
         """Gets the number of edges in the graph.
         """
         return self.c_graph.get_arc_num()
+
+    def mark_node(self, node_id i):
+        """If flag reuse_trees is true while calling maxflow(), then search trees
+        are reused from previous maxflow computation. 
+        In this case before calling maxflow() the user must
+        specify which parts of the graph have changed by calling mark_node():
+        add_tweights(i),set_trcap(i)    => call mark_node(i)
+        add_edge(i,j),set_rcap(a)       => call mark_node(i); mark_node(j)
+        
+        This option makes sense only if a small part of the graph is changed.
+        The initialization procedure goes only through marked nodes then.
+        
+        mark_node(i) can either be called before or after graph modification.
+        Can be called more than once per node, but calls after the first one
+        do not have any effect.
+        
+        NOTE: 
+        - This option cannot be used in the first call to maxflow().
+        - It is not necessary to call mark_node() if the change is ``not essential'',
+            i.e. sign(trcap) is preserved for a node and zero/nonzero status is preserved for an arc.
+        - To check that you marked all necessary nodes, you can call maxflow(false) after calling maxflow(true).
+            If everything is correct, the two calls must return the same value of flow. (Useful for debugging).
+        """
+        return self.c_graph.mark_node(i)
 
 
 cdef public class GraphFloat[object PyObject_GraphFloat, type GraphFloat]:
@@ -266,6 +314,30 @@ cdef public class GraphFloat[object PyObject_GraphFloat, type GraphFloat]:
         """
         return self.c_graph.get_arc_num()
 
+    def mark_node(self, node_id i):
+        """If flag reuse_trees is true while calling maxflow(), then search trees
+        are reused from previous maxflow computation. 
+        In this case before calling maxflow() the user must
+        specify which parts of the graph have changed by calling mark_node():
+        add_tweights(i),set_trcap(i)    => call mark_node(i)
+        add_edge(i,j),set_rcap(a)       => call mark_node(i); mark_node(j)
+        
+        This option makes sense only if a small part of the graph is changed.
+        The initialization procedure goes only through marked nodes then.
+        
+        mark_node(i) can either be called before or after graph modification.
+        Can be called more than once per node, but calls after the first one
+        do not have any effect.
+        
+        NOTE: 
+        - This option cannot be used in the first call to maxflow().
+        - It is not necessary to call mark_node() if the change is ``not essential'',
+            i.e. sign(trcap) is preserved for a node and zero/nonzero status is preserved for an arc.
+        - To check that you marked all necessary nodes, you can call maxflow(false) after calling maxflow(true).
+            If everything is correct, the two calls must return the same value of flow. (Useful for debugging).
+        """
+        return self.c_graph.mark_node(i)
+
 
 cdef public class GraphDouble[object PyObject_GraphDouble, type GraphDouble]:
 
@@ -353,3 +425,27 @@ cdef public class GraphDouble[object PyObject_GraphDouble, type GraphDouble]:
         """Gets the number of edges in the graph.
         """
         return self.c_graph.get_arc_num()
+
+    def mark_node(self, node_id i):
+        """If flag reuse_trees is true while calling maxflow(), then search trees
+        are reused from previous maxflow computation. 
+        In this case before calling maxflow() the user must
+        specify which parts of the graph have changed by calling mark_node():
+        add_tweights(i),set_trcap(i)    => call mark_node(i)
+        add_edge(i,j),set_rcap(a)       => call mark_node(i); mark_node(j)
+        
+        This option makes sense only if a small part of the graph is changed.
+        The initialization procedure goes only through marked nodes then.
+        
+        mark_node(i) can either be called before or after graph modification.
+        Can be called more than once per node, but calls after the first one
+        do not have any effect.
+        
+        NOTE: 
+        - This option cannot be used in the first call to maxflow().
+        - It is not necessary to call mark_node() if the change is ``not essential'',
+            i.e. sign(trcap) is preserved for a node and zero/nonzero status is preserved for an arc.
+        - To check that you marked all necessary nodes, you can call maxflow(false) after calling maxflow(true).
+            If everything is correct, the two calls must return the same value of flow. (Useful for debugging).
+        """
+        return self.c_graph.mark_node(i)
