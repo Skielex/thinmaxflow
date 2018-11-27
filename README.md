@@ -8,7 +8,7 @@ Install package using `pip install thinmaxflow` or clone this repository. Buildi
 Currently, there are four different types of graphs: `GraphInt`, `GraphShort`, `GraphFloat` and `GraphDouble`. The only difference is the underlying datatypes used for the edge capacities in the graph. For stability, it is recommended to use `GraphInt` for integer capacities and `GraphDouble` floating point capacities. However, in some cases, it maybe be favourable to use `GraphShort` or `GraphFloat` to reduce memory consumption.
 
 ## Tiny example
-```
+```python
 import thinmaxflow as tf
 
 # Create graph object.
