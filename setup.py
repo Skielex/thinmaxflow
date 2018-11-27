@@ -1,9 +1,10 @@
-import os
-import urllib.request
-from zipfile import ZipFile
 from setuptools import setup, Extension
 from Cython.Build import cythonize
 import numpy as np
+
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
 
 
 class LazyCythonize(list):
@@ -48,17 +49,16 @@ setup(name="thinmaxflow",
       author="Niels Jeppesen",
       author_email="niejep@dtu.dk",
       description="A thin Maxflow wrapper for Python",
+      long_description=long_description,
+      long_description_content_type="text/markdown",
       url="https://github.com/Skielex/thinmaxflow",
-      license="GPL",
-      long_description="""
-      
-      """,
+      packages=["thinmaxflow"],
       classifiers=[
           "Development Status :: 3 - Alpha",
           "Environment :: Console",
           "Intended Audience :: Developers",
           "Intended Audience :: Science/Research",
-          "License :: OSI Approved :: GNU General Public License (GPL)",
+          "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
           "Natural Language :: English",
           "Operating System :: OS Independent",
           "Programming Language :: C++",
@@ -67,7 +67,6 @@ setup(name="thinmaxflow",
           "Topic :: Scientific/Engineering :: Artificial Intelligence",
           "Topic :: Scientific/Engineering :: Mathematics"
       ],
-      packages=["thinmaxflow"],
       ext_modules=LazyCythonize(extensions),
       requires=["numpy", "Cython"],
       setup_requires=['numpy', 'Cython']
