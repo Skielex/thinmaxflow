@@ -5,7 +5,7 @@ Thin Python wrapper for a modified version of the Maxflow algorithm by Yuri Boyk
 Install package using `pip install thinmaxflow` or clone this repository. Building the package requires Cython.
 
 ## Graph types
-Currently, there are four different types of graphs: `GraphInt`, `GraphShort`, `GraphFloat` and `GraphDouble`. The only difference is the underlying datatypes used for the edge capacities in the graph. For stability, it is recommended to use `GraphInt` for integer capacities and `GraphDouble` floating point capacities. However, in some cases, it maybe be favourable to use `GraphShort` or `GraphFloat` to reduce memory consumption.
+Currently, there are four different types of graphs: `GraphInt`, `GraphShort`, `GraphFloat` and `GraphDouble`. The only difference is the underlying datatypes used for the edge capacities in the graph. For stability, it is recommended to use `GraphInt` for integer capacities and `GraphDouble` for floating point capacities. However, in some cases, it maybe be favourable to use `GraphShort` or `GraphFloat` to reduce memory consumption.
 
 ## Tiny example
 ```python
@@ -25,7 +25,7 @@ graph.add_tweights(0, 5, 0) # s     --5->   n(0)
 graph.add_tweights(0, 0, 1) # n(0)  --1->   t
 graph.add_tweights(1, 0, 3) # n(1)  --3->   t
 graph.add_edge(0, 1, 2, 1)  # n(0)  --2->   n(1)
-                            # n(0)  --1->   n(1)
+                            # n(1)  --1->   n(0)
 
 # Find maxflow/cut graph.
 flow = graph.maxflow()

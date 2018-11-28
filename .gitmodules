@@ -1,4 +1,4 @@
 [submodule "thinmaxflow/src/core"]
 	path = thinmaxflow/src/core
-	url = ../maxflow
+	url = ../maxflow.git
 	branch = master
