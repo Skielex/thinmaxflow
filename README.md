@@ -2,7 +2,7 @@
 Thin Python wrapper for a modified version of the Maxflow algorithm by Yuri Boykov and Vladimir Kolmogorov. The original source code by Vladimir Kolmogorov availbable at http://pub.ist.ac.at/~vnk/software.html. This wrapper uses a modified version with support for larger graphs and slightly lower memory usage. See [submodule repository](https://github.com/Skielex/maxflow) for more details.
 
 ## Maxflow vs. QPBO
-A more advanced alternative to the Maxflow algorithm is (quadratic pseudo-Boolean optimization) [QOBO](https://github.com/Skielex/thinqpbo), which also uses *s-t* graph cut. Unlike Maxflow, it allows for non-submodular energy terms, which Maxflow doesn't (unless you construct the graph in a specific way, which is what QPBO does). Amongst other things, this allows QPBO to solve optimization problems with exclusions terms, which can be very usefull. QPBO uses more memory and is slightly slower than Maxflow.
+A more advanced alternative to the Maxflow algorithm is (quadratic pseudo-Boolean optimization) [QPBO](https://github.com/Skielex/thinqpbo), which also uses *s-t* graph cut. Unlike Maxflow, it allows for non-submodular energy terms, which Maxflow doesn't (unless you construct the graph in a specific way, which is what QPBO does). Amongst other things, this allows QPBO to solve optimization problems with exclusions terms, which can be very usefull. QPBO uses more memory and is slightly slower than Maxflow.
 
 ## Installation
 Install package using `pip install thinmaxflow` or clone this repository (including [submodule](https://github.com/Skielex/maxflow)). Building the package requires Cython.
