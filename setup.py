@@ -68,6 +68,6 @@ setup(name="thinmaxflow",
           "Topic :: Scientific/Engineering :: Mathematics"
       ],
       ext_modules=LazyCythonize(extensions),
-      requires=["numpy", "Cython"],
-      setup_requires=['numpy', 'Cython']
+      setup_requires=["Cython"],
+      install_requires =[]
       )
