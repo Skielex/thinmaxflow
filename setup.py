@@ -39,7 +39,7 @@ def extensions():
 
 
 setup(name="thinmaxflow",
-      version="0.1.1",
+      version="0.1.2",
       author="Niels Jeppesen",
       author_email="niejep@dtu.dk",
       description="A thin Maxflow wrapper for Python",
