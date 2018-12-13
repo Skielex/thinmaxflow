@@ -1,5 +1,4 @@
 from setuptools import setup, Extension
-from Cython.Build import cythonize
 
 
 with open("README.md", "r") as fh:
@@ -25,6 +24,7 @@ class LazyCythonize(list):
 
 
 def extensions():
+    from Cython.Build import cythonize
 
     maxflow_module = Extension(
         "thinmaxflow._maxflow",
@@ -62,6 +62,5 @@ setup(name="thinmaxflow",
           "Topic :: Scientific/Engineering :: Mathematics"
       ],
       ext_modules=LazyCythonize(extensions),
-      setup_requires=["Cython"],
-      install_requires =[]
+      install_requires =["Cython"]
       )
