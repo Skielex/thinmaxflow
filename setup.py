@@ -26,8 +26,6 @@ class LazyCythonize(list):
 
 def extensions():
 
-    numpy_include_dir = np.get_include()
-
     maxflow_module = Extension(
         "thinmaxflow._maxflow",
         [
@@ -36,9 +34,6 @@ def extensions():
             "thinmaxflow/src/core/graph.cpp",
         ],
         language="c++",
-        include_dirs=[
-            numpy_include_dir,
-        ]
     )
     return cythonize([maxflow_module])
 
