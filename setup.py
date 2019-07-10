@@ -39,7 +39,7 @@ def extensions():
 
 
 setup(name="thinmaxflow",
-      version="0.1.2",
+      version="0.1.3",
       author="Niels Jeppesen",
       author_email="niejep@dtu.dk",
       description="A thin Maxflow wrapper for Python",
@@ -62,5 +62,5 @@ setup(name="thinmaxflow",
           "Topic :: Scientific/Engineering :: Mathematics"
       ],
       ext_modules=LazyCythonize(extensions),
-      install_requires =["Cython"]
+      install_requires=["Cython"]
       )
