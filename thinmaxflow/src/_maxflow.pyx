@@ -2,6 +2,9 @@
 
 from .src._maxflow cimport Graph, termtype, node_id, bool
 
+cpdef enum TermType:
+    SOURCE = 0,
+    SINK = 1
 
 cdef public class GraphInt[object PyObject_GraphInt, type GraphInt]:
 

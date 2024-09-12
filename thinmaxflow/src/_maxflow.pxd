@@ -4,7 +4,7 @@
 from libcpp cimport bool
 
 cdef extern from "core/graph.h":
-    cpdef enum termtype:
+    ctypedef enum termtype:
         SOURCE = 0,
         SINK = 1
 
