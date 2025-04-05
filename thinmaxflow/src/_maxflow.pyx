@@ -1,6 +1,7 @@
 # distutils: language = c++
 
-from .src._maxflow cimport Graph, termtype, node_id, bool
+from .src._maxflow cimport Graph, bool, node_id, termtype
+
 
 cpdef enum TermType:
     SOURCE = 0,

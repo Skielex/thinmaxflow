@@ -3,6 +3,7 @@
 
 from libcpp cimport bool
 
+
 cdef extern from "core/graph.h":
     ctypedef enum termtype:
         SOURCE = 0,

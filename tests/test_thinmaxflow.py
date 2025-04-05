@@ -1,5 +1,6 @@
 import unittest
-from thinmaxflow import GraphShort, GraphInt, GraphFloat, GraphDouble
+
+from thinmaxflow import GraphDouble, GraphFloat, GraphInt, GraphShort
 
 
 class TestGraph(unittest.TestCase):
@@ -8,8 +9,7 @@ class TestGraph(unittest.TestCase):
         self.graph_types = [GraphShort, GraphInt, GraphFloat, GraphDouble]
 
     def test_create_graph(self):
-        """Test graph constructors.
-        """
+        """Test graph constructors."""
         for graph_type in self.graph_types:
             graph_type()
 
@@ -17,8 +17,7 @@ class TestGraph(unittest.TestCase):
             graph_type(100, 100)
 
     def test_add_node(self):
-        """Test add_node function. 
-        """
+        """Test add_node function."""
         for graph_type in self.graph_types:
 
             graph = graph_type()
@@ -36,8 +35,7 @@ class TestGraph(unittest.TestCase):
             self.assertEqual(node_count, 101)
 
     def test_add_edge(self):
-        """Test add_edge function. 
-        """
+        """Test add_edge function."""
         for graph_type in self.graph_types:
 
             graph = graph_type()
@@ -53,8 +51,7 @@ class TestGraph(unittest.TestCase):
             self.assertEqual(edge_count, 2)
 
     def test_example(self):
-        """Test maxflow function.
-        """
+        """Test maxflow function."""
         for graph_type in self.graph_types:
 
             graph = graph_type()
@@ -87,5 +84,5 @@ class TestGraph(unittest.TestCase):
             # Maximum flow: 3
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
