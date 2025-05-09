@@ -41,7 +41,7 @@ def extensions():
 
 setup(
     name="thinmaxflow",
-    version="0.1.6",
+    version="0.2.0",
     author="Niels Jeppesen",
     author_email="niejep@dtu.dk",
     description="A thin Maxflow wrapper for Python",
@@ -50,7 +50,7 @@ setup(
     url="https://github.com/Skielex/thinmaxflow",
     packages=["thinmaxflow"],
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
         "Environment :: Console",
         "Intended Audience :: Developers",
         "Intended Audience :: Science/Research",

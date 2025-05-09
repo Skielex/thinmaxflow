@@ -60,7 +60,9 @@ cdef public class GraphInt[object PyObject_GraphInt, type GraphInt]:
         FOR DESCRIPTION OF reuse_trees, SEE mark_node().
         FOR DESCRIPTION OF changed_list, SEE remove_from_changed_list().
         """
-        return self.c_graph.maxflow(reuse_trees)
+        with nogil:
+            flow = self.c_graph.maxflow(reuse_trees)
+        return flow
 
     def what_segment(self, node_id i, termtype default_segm = termtype.SOURCE):
         """After the maxflow is computed, this function returns to which
